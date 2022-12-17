@@ -82,6 +82,7 @@ auc = evaluator.evaluate(predictions)
 print('AUC:', auc)
 ```
 <img width="513" alt="image" src="https://user-images.githubusercontent.com/92469431/208259816-331ad96f-688d-45c7-8d13-903423bef52f.png">
+
 ```py
 # Create the confusion matrix 
 predictions.groupby('label').pivot('prediction').count().fillna(0).show()

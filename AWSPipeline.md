@@ -43,10 +43,6 @@ sdf = sdf.withColumn('review_body_wordcount', size(split(col('review_body'), ' '
 # Create a binary output label
 sdf = sdf.withColumn("label", when(col("star_rating") > 3, 1.0).otherwise(0.0))
 
-# We want to see if any of these positive words exist in the  
-good_words = ["good", "excellent", "great", "awesome", "will buy again", "like it", "love it", "amazing", "fire"]
-sdf = sdf.withColumn("hasPositiveWord", when(    lower(sdf.review_body).rlike('|'.join(good_words)), 1.0 ).otherwise(0.0) )
-
 # Cast the total_votes and review_body_wordcount to double
 sdf = sdf.withColumn("total_votes",sdf.total_votes.cast(DoubleType()))
 sdf = sdf.withColumn("review_body_wordcount",sdf.review_body_wordcount.cast(DoubleType()))

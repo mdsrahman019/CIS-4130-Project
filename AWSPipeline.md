@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Set up the path to a group of files. Should match 'Home', 'Home Improvement' and 'Home Entertainment' bucket = 's3a://amazon-reviews-pds/tsv/'
+# Set up the path to a group of files. Should match 'Digital' bucket = 's3a://amazon-reviews-pds/tsv/'
 filename = 'amazon_reviews_us_Digital*_v1_00.tsv.gz'
 file_path = bucket + filename
 
